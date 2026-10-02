@@ -6,7 +6,8 @@ Trabalho de engenharia de software do prof Henry em 2026-02
 
 Este repositório é onde vou guardar meu trabalho da disciplina de engenharia de software.
 
-## Diagrama UML 
+## Diagramas UML 
+### Diagrama de casos de uso
 
 ```mermaid
 flowchart TD
@@ -25,4 +26,31 @@ flowchart TD
     garçom -- "recebe pedido" --- comida
 
     vinho -. "estende" .-> comida
+```
+###  Diagrama de classe 
+
+```mermaid
+classDiagram
+   class Veterinario{
+    -nomeVet: String
+    +darNomeVet() String
+    +atenderAnimal(animal: Animal) void
+   }
+
+    Veterinario -- Animal
+   Animal -- Tutor
+    
+    class Animal{
+        -nome: String
+        -especie: String
+        -done: Tutor
+        +darNome() String
+        +darEspecie() String
+    }
+
+    class Tutor{
+        -nomeTutor: String
+        -animais: Animal[]
+        +darNomeTutor() String
+    }
 ```
